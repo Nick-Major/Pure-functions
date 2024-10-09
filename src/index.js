@@ -1,16 +1,24 @@
-let magician = {
+export let warrior = {
+    name: 'Воин', 
+    health: 70
+}
+
+export let magician = {
     name: 'Маг', 
     health: 47
 }
 
-function characterStatus(character) {
-    if(character.health > 50) {
-        return console.log('healthy');
-    } else if (character.health <= 50 && character.health >= 15) {
-        return console.log('wounded');
-    } else if (character.health < 15) {
-        return console.log('critical');
-    }
+export let archer = {
+    name: 'Лучник', 
+    health: 12
 }
 
-characterStatus(magician);
+export function characterStatus(character) {
+    if(character.health > 50) {
+        return 'healthy';
+    } else if (character.health <= 50 && character.health >= 15) {
+        return 'wounded';
+    } else if (character.health < 15) {
+        return 'critical';
+    }
+}
