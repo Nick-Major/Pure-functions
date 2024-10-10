@@ -1,20 +1,11 @@
-environment:
-  nodejs_version: "18"
-
+image: Visual Studio 2022
+stack: node 20
 branches:
   only:
-    - master  # ветка git
     - main
-
-cache: node_modules  # кеширование
-
+cache: node_modules
 install:
-  - npm install  # команда установки зависимостей
-
-build: off  # отключаем встроенную в appveyor систему сборки
-
-build_script:
-  - npm run build   # команда сборки
-
+  - npm install
+build: off
 test_script:
-  - npm run lint && npm test  # скрипт тестирования
+  - npm run lint && npm test
